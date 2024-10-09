@@ -6,9 +6,16 @@ window.addEventListener('load', function() {
     let charIndex = 0;
 
     // Play audio once
-    // audio.play().catch(error => {
-    //     console.log('Audio autoplay failed: ', error);
-    // });
+  // Function to play the audio once the user interacts with the page
+  function playAudio() {
+    audio.play().catch(error => {
+        console.log('Audio autoplay failed: ', error);
+    });
+}
+
+// Add event listener for any user interaction (click or keypress) to play audio
+window.addEventListener('click', playAudio, { once: true });
+window.addEventListener('keydown', playAudio, { once: true });
 
     // Type out text with typewriter effect
     function typeText(text, callback = null, speed = 100) {
@@ -36,7 +43,7 @@ window.addEventListener('load', function() {
     // Handle user input and respond with a typewriter effect
     inputField.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
-            const userInput = inputField.value.trim().toLowerCase();
+            const userInput = inputField.value.trim().toLowerCase()
             inputField.value = '';  // Clear input
 
             // Fast typewriter effect for responses
