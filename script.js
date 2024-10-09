@@ -87,8 +87,10 @@ window.addEventListener('keydown', playAudio, { once: true });
             } else if (userInput === 'contact') {
                 const contactResponse = `
                 mail me at : noobdeveloperlvl0@gmail.com<br>
+                add me on <a href="https://tryhackme.com/r/p/127.0.0.1p7777" target=_blank">TryHackMe</a>.<br>
                 follow me on <a href="https://instagram.com/127.0.0.1_7777" target="_blank">Instagram</a>.<br>
                 or we can chat on <a href="https://wa.link/atbsf4" target="_blank">Whatsapp</a>.<br>
+
                 `
                 respondWithHTML(contactResponse)
             } else if (userInput === 'help') {
@@ -103,6 +105,8 @@ window.addEventListener('keydown', playAudio, { once: true });
                 respondWithType("Hello friend? I know you exist only in my brain anyways welcome to my portfolio.")
             }else if(userInput === ''){
                 respondWithType("Please enter some commands to explore about me....")
+            }else if(userInput === 'fucksociety'){
+                respondWithType("Hey you have found the hidden commands, you are the real G.O.A.T. congratulations ! please let me know if you have fount it, i have something for you.")
             }
             else {
                 respondWithType("Command not found. Enter 'help' to get the full list of commands.");
