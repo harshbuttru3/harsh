@@ -94,7 +94,7 @@ window.addEventListener('keydown', playAudio, { once: true });
                 `
                 respondWithHTML(contactResponse)
             } else if (userInput === 'help') {
-                respondWithType("Here are the list of commands.\nprojects: list some of my recent projects. \ncontact: gives options to contact me. \nwhoami: you probably know me. right?\nseeme: wanna see me?\nclear: clear the screen\nThere are some hidden commands as easter egg you can find them to know more about me!(just use your blackhat skills, good luck.)");
+                respondWithType("Here are the list of commands.\nprojects: list some of my recent projects. \ncontact: gives options to contact me. \nwhoami: you probably know me. right?\nseeme: wanna see me?\npause: Pause the audio if it feels annoying to you.\nclear: clear the screen\nThere are some hidden commands as easter egg you can find them to know more about me!(just use your blackhat skills, good luck.)");
             } else if (userInput === 'seeme'){
                 const seemeResponse = `
                 <img src="elliot.jpg"> <br> I am not gonna show my face here for obvious reasons! `
@@ -107,6 +107,9 @@ window.addEventListener('keydown', playAudio, { once: true });
                 respondWithType("Please enter some commands to explore about me....")
             }else if(userInput === 'fucksociety'){
                 respondWithType("Hey you have found the hidden commands, you are the real G.O.A.T. congratulations ! please let me know if you have fount it, i have something for you.")
+            } else if(userInput === 'pause') {
+                audio.pause();
+                respondWithType("Audio paused !")
             }
             else {
                 respondWithType("Command not found. Enter 'help' to get the full list of commands.");
