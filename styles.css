@@ -1,0 +1,44 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #055605;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    height: 100%;
+}
+
+#terminal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Align terminal to the top */
+    align-items: flex-start;  /* Align text to the left */
+    padding: 20px;  /* Padding to create some space around the terminal */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;  /* Center the terminal horizontally */
+}
+
+#output {
+    width: 100%;
+    white-space: pre-wrap;  /* Ensures text wraps properly */
+    margin-bottom: 20px;
+}
+
+#input-line {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#prompt {
+    margin-right: 5px;
+}
+
+#user-input {
+    background: none;
+    border: none;
+    outline: none;
+    color: #8d0101;
+    width: 100%;
+}
