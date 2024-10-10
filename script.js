@@ -47,14 +47,29 @@ window.addEventListener('keydown', playAudio, { once: true });
             inputField.value = '';  // Clear input
 
             // Fast typewriter effect for responses
-            function respondWithType(response) {
-                inputField.disabled = true;
-                output.innerHTML += "<br><br>$ " + userInput + "<br><br>";
-                typeText(response, () => { 
-                    inputField.disabled = false;
-                    inputField.focus();  // Re-focus input after response
-                }, 50);  // Faster speed for responses (50ms)
+            function respondWithType(response, callback = null, speed = 50) {
+                inputField.disabled = true;  // Disable input while typing
+                output.innerHTML += "<br><br>$ " + userInput + "<br><br>";  // Display user input
+                let i = 0;
+            
+                function type() {
+                    if (i < response.length) {
+                        output.innerHTML += response.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    } else {
+                        if (callback) {
+                            callback();  // Execute callback if provided
+                        }
+                        // Re-enable the input field and focus after typing (and after callback)
+                        inputField.disabled = false;
+                        inputField.focus();
+                    }
+                }
+                type();
             }
+            
+            
 
             // Direct HTML rendering for projects
             function respondWithHTML(response) {
@@ -106,7 +121,16 @@ window.addEventListener('keydown', playAudio, { once: true });
             }else if(userInput === ''){
                 respondWithType("Please enter some commands to explore about me....")
             }else if(userInput === 'fucksociety'){
-                respondWithType("Hey you have found the hidden commands, you are the real G.O.A.T. congratulations ! please let me know if you have fount it, i have something for you.")
+                respondWithType("Hey, you have found the hidden commands! You are the real G.O.A.T. Congratulations! I have something for you.", () => {
+                    // Directly append the reward link to the output after the typewriter effect finishes
+                    output.innerHTML += `
+                    <br>Visit this <a href="https://i.gifer.com/origin/95/95b0983d931fab1bcce0d77cde28fc31_w200.gif" target="_blank">site</a> to claim your reward!`;
+                    
+                    // Re-enable the input and focus after rendering the reward link
+                    inputField.disabled = false;
+                    inputField.focus();
+                });
+             
             } else if(userInput === 'pause') {
                 audio.pause();
                 respondWithType("Audio paused !")
