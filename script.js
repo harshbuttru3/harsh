@@ -109,7 +109,7 @@ window.addEventListener('keydown', playAudio, { once: true });
                 `
                 respondWithHTML(contactResponse)
             } else if (userInput === 'help') {
-                respondWithType("Here are the list of commands.\nprojects: list some of my recent projects. \ncontact: gives options to contact me. \nwhoami: you probably know me. right?\nseeme: wanna see me?\npause: Pause the audio if it feels annoying to you.\nplay: Play the audio.\nclear: clear the screen\nThere are some hidden commands as easter egg you can find them if you can!(just use your blackhat skills, good luck.)");
+                respondWithType("Here are the list of commands.\n\nprojects: list some of my recent projects. \ncontact: gives options to contact me. \nwhoami: you probably know me. right?\nseeme: wanna see me?\npause: Pause the audio if it feels annoying to you.\nplay: Play the audio.\nclear: clear the screen\n\nThere are some hidden commands as easter egg you can find them if you can!(just use your blackhat skills, good luck.)");
             } else if (userInput === 'seeme'){
                 const seemeResponse = `
                 <img src="elliot.jpg"> <br> I am not gonna show my face here for obvious reasons! `
