@@ -26,5 +26,16 @@
     </audio>
 
     <script src="script.js"></script>
+    <script>
+      if (window.self === window.top) {
+        // In iframe
+        document.body.classList.add('in-iframe');
+        document.html.classList.add('in-iframe');
+      } else {
+        // Not in iframe
+        document.body.classList.add('not-in-iframe');
+        document.html.classList.add('not-in-iframe'); 
+      }
+    </script>
 </body>
 </html>

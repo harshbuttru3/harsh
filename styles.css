@@ -1,4 +1,13 @@
-body, html {
+body.not-in-iframe, html.not-in-iframe {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0,0,0);
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    height: 100%;
+}
+body.in-iframe, html.in-iframe {
     margin: 0;
     padding: 0;
     background-color: rgba(0,0,0,0);
