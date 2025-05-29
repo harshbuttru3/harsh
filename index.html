@@ -27,7 +27,7 @@
 
     <script src="script.js"></script>
     <script>
-      if (window.self === window.top) {
+      if (window.self !== window.top) {
         // In iframe
         document.body.classList.add('in-iframe');
         document.html.classList.add('in-iframe');
